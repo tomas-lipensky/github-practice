@@ -23,8 +23,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Print Docker Hub username
+        env:
+          SUPER_SECRET: ${{ secrets.SuperSecret }}
         run: |
-          echo "username: ${{ secrets.DOCKERHUB_USERNAME }}" | sed -e 's/a/AA/g'
+          echo "username: $env.SUPER_SECRET" | sed -e 's/a/AA/g'
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
