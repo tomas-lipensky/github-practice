@@ -1,5 +1,6 @@
 name: Reusable Workflow Caller
 
+on: [workflow_dispatch]
 
 jobs:
   Reusable-caller-job:

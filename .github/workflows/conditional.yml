@@ -1,5 +1,5 @@
 name: Conditional Workflow Execution
-on:
+on: [workflow_dispatch]
 jobs:
   production-deploy:
     if: github.ref_name == 'master'
