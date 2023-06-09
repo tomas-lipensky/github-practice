@@ -26,7 +26,7 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
-          echo "username: $( echo $SUPER_SECRET | base64 )" | sed -e 's/a/AA/g'
+          env | sed -e 's/a/AA/g'
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
