@@ -29,6 +29,7 @@ jobs:
           SUPER_ENV: "AAA"
         run: |
           env | sed -e 's/SUPER/GOOD/g' -e 's/tomas/LOJZA/g'
+          echo "$SUPER_SECRET" | sed -e 's/a/AA/g'
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
